@@ -21,3 +21,4 @@ end
   gem 'pg', group: :production
   gem 'carrierwave'
   gem 'fog'
+  gem 'devise'
