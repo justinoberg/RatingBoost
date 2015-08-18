@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'pages/buy'
+
   devise_for :users
   resources :businesses
   get 'pages/about'
