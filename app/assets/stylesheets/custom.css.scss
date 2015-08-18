@@ -12,7 +12,7 @@
 }
 .navbar-default {
 	.container-fluid {
-		background-color: #114069;
+		background-color: #113758;
 		.navbar-nav > li > a {
 			color: #fff;
 			font-size: 16px;
@@ -28,10 +28,14 @@
 
 .container-fluid {
 	padding: 10px 120px;
+	color: #fff;		
+	text-shadow: 1px 1px 1px #000;
+
 }
 
+
 body {
-	background-image: url("https://s3-us-west-1.amazonaws.com/ratingboost/background.jpg"); 
-    background-size: cover;
+	background-color: #113758;
+	background-image: url("https://s3-us-west-1.amazonaws.com/ratingboost/bg.jpg"); 
     background-repeat:no-repeat;
 }
