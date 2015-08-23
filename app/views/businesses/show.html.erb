@@ -21,5 +21,7 @@
   <%= @business.website %>
 </p>
 
+<%= link_to "Write a Review", new_business_review_path(@business), class: "btn btn-primary" %>
+
 <%= link_to 'Edit', edit_business_path(@business), class: "btn btn-link" %> |
 <%= link_to 'Back', businesses_path, class: "btn btn-link" %>
