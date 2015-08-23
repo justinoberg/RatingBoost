@@ -1,8 +1,8 @@
 require 'test_helper'
 
 class PagesControllerTest < ActionController::TestCase
-  test "should get buy" do
-    get :buy
+  test "should get home" do
+    get :home
     assert_response :success
   end
 
