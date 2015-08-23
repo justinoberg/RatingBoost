@@ -1,5 +1,6 @@
 class BusinessesController < ApplicationController
   before_action :set_business, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_user!
 
   # GET /businesses
   # GET /businesses.json
@@ -25,6 +26,7 @@ class BusinessesController < ApplicationController
   # POST /businesses.json
   def create
     @business = Business.new(business_params)
+    @business.user_id = current_user.id
 
     respond_to do |format|
       if @business.save
