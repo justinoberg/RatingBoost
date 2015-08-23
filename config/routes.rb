@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
-  resources :reviews
+  resources :reviews, except: [:show, :index]
+ 
   get 'pages/buy'
 
   devise_for :users
