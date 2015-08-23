@@ -1,5 +1,6 @@
 class ReviewsController < ApplicationController
   before_action :set_review, only: [:edit, :update, :destroy]
+  before_action :set_business
 
   # GET /reviews/new
   def new
@@ -14,6 +15,7 @@ class ReviewsController < ApplicationController
   # POST /reviews.json
   def create
     @review = Review.new(review_params)
+    @review.business_id = @business.id
 
     respond_to do |format|
       if @review.save
@@ -55,6 +57,10 @@ class ReviewsController < ApplicationController
     def set_review
       @review = Review.find(params[:id])
     end
+
+    def set_business
+      @business = Business.find(params[:business_id])
+    end  
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def review_params
