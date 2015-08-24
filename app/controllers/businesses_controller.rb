@@ -11,6 +11,7 @@ class BusinessesController < ApplicationController
   # GET /businesses/1
   # GET /businesses/1.json
   def show
+    @reviews = Review.where(business_id: @business.id)
   end
 
   # GET /businesses/new
