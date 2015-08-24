@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
  
+  get 'pages/thanks'
+
   get 'pages/home'
 
   get 'pages/Home'
