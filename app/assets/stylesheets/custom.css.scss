@@ -13,6 +13,18 @@
 	}
 
 }
+.navbar-default .navbar-nav .open a {
+	background-color: #222;
+	background-image: linear-gradient(to bottom,#222 0,#222 100%);
+	color: #fff;
+}
+
+.navbar-default .navbar-nav .open a:focus {
+	color: #fff;
+}
+.navbar-nav li .dropdown-menu {
+	background-color: #222;
+}
 .page-header {
 	margin-top:0px;
 }
