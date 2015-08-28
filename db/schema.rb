@@ -29,9 +29,8 @@ ActiveRecord::Schema.define(version: 20150823214507) do
     t.text     "comment"
     t.string   "name"
     t.string   "email"
-    t.datetime "created_at",    null: false
-    t.datetime "updated_at",    null: false
-    t.integer  "restaurant_id"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
     t.integer  "business_id"
   end
 
