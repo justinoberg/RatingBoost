@@ -9,7 +9,7 @@
  
 </head>
 <body>
-	<%= render 'layouts/navbar' unless current_page?('/businesses/1/reviews/new') %>
+	<%= render 'layouts/navbar' unless @skip_footer %>
 	<div class="container-fluid">
 		<% flash.each do |name, msg| %>
       <% if msg.is_a?(String) %>
