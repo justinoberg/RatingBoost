@@ -49,11 +49,13 @@
 	  							<%= "#{review.name.capitalize}" %>
 	  						</h4>
 	  						<p><%= review.created_at.strftime("%-m/%-d/%y") %></p>
+	  						<%= link_to "Delete", business_review_path(@business, review), method: :delete, class: "btn btn-danger" %>
 	  					</td>
 	  					<td>
 							<div class="star-rating" data-score= <%= review.rating %> ></div><br>
 							<p class="review-comment"><%= h(review.comment).gsub(/\n/, '<br/>').html_safe %></p>
 							<h5 class="review-email"><%= review.email %></h5>
+
 						</td>
 					</tr>
 	  			<% end %>
