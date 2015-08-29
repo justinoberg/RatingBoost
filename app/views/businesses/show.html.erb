@@ -24,7 +24,7 @@
  		 <%= @business.website %>
 		</p>
 
-		<%= link_to "Write a Review", new_business_review_path(@business), class: "btn btn-primary" %>
+		<%= link_to "Collect Reviews", new_business_review_path(@business), class: "btn btn-primary" %>
 		<br><%= link_to 'Edit', edit_business_path(@business), class: "btn btn-link" %> |
 		<%= link_to 'Back', businesses_path, class: "btn btn-link" %>
 	</div>
@@ -34,14 +34,26 @@
 	  	<h3>No reviews yet. Ask for some!</h3>
 	  <% else %>
 	  	<table class="table">
+	  		<thead>
+	  			<tr>
+	  				<th class ="col-md-3"></th>
+	  				<th class ="col-md-9"></th>
+	  			<tr>
+	  		<thead>
+
 	  		<tbody>
 	  			<% @reviews.each do |review| %>
 	  				<tr>
 	  					<td>
-	  						<h3><%= review.name %></h3>
-							<h4><%= review.email %></h4>
+	  						<h4>
+	  							<%= "#{review.name.capitalize}" %>
+	  						</h4>
+	  						<p><%= review.created_at.strftime("%-m/%-d/%y") %></p>
+	  					</td>
+	  					<td>
 							<div class="star-rating" data-score= <%= review.rating %> ></div><br>
-							<p><%= h(review.comment).gsub(/\n/, '<br/>').html_safe %></p>
+							<p class="review-comment"><%= h(review.comment).gsub(/\n/, '<br/>').html_safe %></p>
+							<h5 class="review-email"><%= review.email %></h5>
 						</td>
 					</tr>
 	  			<% end %>
