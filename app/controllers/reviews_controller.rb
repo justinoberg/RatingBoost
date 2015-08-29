@@ -9,7 +9,7 @@ class ReviewsController < ApplicationController
   end
 
   # GET /reviews/1/edit
-  def edit
+  def edit  
   end
 
   
@@ -27,6 +27,7 @@ class ReviewsController < ApplicationController
       else
         format.html { render :new }
         format.json { render json: @review.errors, status: :unprocessable_entity }
+        @skip_footer = true
       end
     end
   end
