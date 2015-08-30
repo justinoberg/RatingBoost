@@ -14,7 +14,7 @@
   <tbody>
     <% @businesses.each do |business| %>
       <tr>
-        <td><%= link_to business.name, business %></td>
+        <td class="business-name"><%= link_to business.name, business %></td>
         <td><%= business.address %></td>
         <td><%= business.phone %></td>
         <td><%= business.website %></td>

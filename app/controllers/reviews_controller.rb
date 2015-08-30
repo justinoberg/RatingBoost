@@ -21,9 +21,13 @@ class ReviewsController < ApplicationController
   def create
     @review = Review.new(review_params)
     @review.business_id = @business.id
+    @review.business_name = @business.name
 
     respond_to do |format|
       if @review.save
+        # Tell the UserMailer to send a welcome email after save
+        UserMailer.notify(@review).deliver
+
         format.html { redirect_to new_business_review_path}
         format.json { render :show, status: :created, location: @review }
       else
