@@ -25,11 +25,19 @@ class ReviewsController < ApplicationController
 
     respond_to do |format|
       if @review.save
+        if @review.rating >= 3
         # Tell the UserMailer to send a welcome email after save
         UserMailer.notify(@review).deliver
 
         format.html { redirect_to new_business_review_path}
         format.json { render :show, status: :created, location: @review }
+        else
+        # Tell the UserMailer to send a welcome email after save
+        UserMailer.warning(@review).deliver
+
+        format.html { redirect_to new_business_review_path}
+        format.json { render :show, status: :created, location: @review }
+        end
       else
         format.html { render :new }
         format.json { render json: @review.errors, status: :unprocessable_entity }
